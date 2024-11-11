@@ -59,6 +59,7 @@ public class WebSocketClientComponent {
         @Override
         public void onMessage(String message) {
             try {
+                System.out.println("Received message: " + message);
                 processMessage(message);
             } catch (Exception e) {
                 e.printStackTrace();
@@ -92,6 +93,8 @@ public class WebSocketClientComponent {
                     putsData.add(new OptionData(Double.parseDouble(strikePrice), volatility));
                 }
             }
+
+            System.out.println("Calls: " + callsData);
 
             // Store the data for later use
             callOptions = callsData;
