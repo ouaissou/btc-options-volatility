@@ -15,9 +15,12 @@ public class OptionService {
     // Inject the WebSocketClientComponent to get the data
     public OptionService(WebSocketClientComponent webSocketClientComponent) {
         this.webSocketClientComponent = webSocketClientComponent;
+        webSocketClientComponent.startClient(); 
     }
 
     public List<OptionData> getCallOptions() {
+        //List<OptionData> callOptions = webSocketClientComponent.getCallOptions();
+        //System.out.println("Service Layer - Call Options: " + callOptions);
         return webSocketClientComponent.getCallOptions();
     }
 

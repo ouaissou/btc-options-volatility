@@ -22,6 +22,8 @@ public class OptionController {
 
     @GetMapping("/calls")
     public List<OptionData> getCallOptions() {
+        // List<OptionData> callOptions = optionService.getCallOptions();
+        // System.out.println("Controller - Returning Call Options: " + callOptions);
         return optionService.getCallOptions();
     }
 

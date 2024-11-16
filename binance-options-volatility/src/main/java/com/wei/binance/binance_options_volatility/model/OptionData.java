@@ -24,4 +24,13 @@ public class OptionData {
     public void setVolatility(double volatility) {
         this.volatility = volatility;
     }
+
+    // @Override
+    // public String toString() {
+    //     return "{" +
+    //             "strikePrice" + strikePrice +
+    //             ", volatility" + volatility +
+    //             '}';
+    // }
+
 }

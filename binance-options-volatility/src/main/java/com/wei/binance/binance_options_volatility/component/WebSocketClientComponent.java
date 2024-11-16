@@ -58,8 +58,8 @@ public class WebSocketClientComponent {
 
         @Override
         public void onMessage(String message) {
+            System.out.println("Received message: " + message);
             try {
-                System.out.println("Received message: " + message);
                 processMessage(message);
             } catch (Exception e) {
                 e.printStackTrace();
@@ -77,6 +77,7 @@ public class WebSocketClientComponent {
         }
 
         private void processMessage(String message) throws Exception {
+            System.out.println("Processing message..."); 
             List<Map<String, Object>> dataList = mapper.readValue(message, List.class);
             List<OptionData> callsData = new ArrayList<>();
             List<OptionData> putsData = new ArrayList<>();
@@ -94,7 +95,8 @@ public class WebSocketClientComponent {
                 }
             }
 
-            System.out.println("Calls: " + callsData);
+            System.out.println("Call Options List: " + callOptions);
+            System.out.println("Put Options List: " + putOptions);
 
             // Store the data for later use
             callOptions = callsData;
